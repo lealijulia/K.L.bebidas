@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato WhatsApp</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+        @media (max-width: 480px) {
+            .btn-whatsapp {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+        }
+    </style>
+    <script>
+        function getSaudacao() {
+            let hora = new Date().getHours();
+            if (hora >= 5 && hora < 12) return "Bom dia";
+            if (hora >= 12 && hora < 18) return "Boa tarde";
+            return "Boa noite";
+        }
+
+        function abrirWhatsApp() {
+            let saudacao = encodeURIComponent(getSaudacao());
+            let numero = "5551984243408";
+            let url = "https://wa.me/" + numero + "?text=" + saudacao;
+            window.open(url, "_blank"); // Abre em uma nova aba
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="kl-editada.jpg" alt="Imagem de Contato">
+    </div>
+    <a href="#" class="btn-whatsapp" onclick="abrirWhatsApp(); return false;">Entrar em Contato no WhatsApp</a>
+</body>
+</html>
