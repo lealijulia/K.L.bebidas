@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato WhatsApp</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
+        * {
             margin: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
         .container {
-            max-width: 90%;
-            margin-bottom: 20px;
-        }
-        img {
+            position: relative;
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            height: 100vh;
+        }
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a imagem cobrir toda a tela */
         }
         .btn-whatsapp {
-            display: inline-block;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: #25D366;
             color: white;
             padding: 12px 20px;
@@ -36,7 +38,6 @@
             font-size: 16px;
             font-weight: bold;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
         }
         @media (max-width: 480px) {
             .btn-whatsapp {
@@ -64,7 +65,7 @@
 <body>
     <div class="container">
         <img src="kl-editada.jpg" alt="Imagem de Contato">
+        <a href="#" class="btn-whatsapp" onclick="abrirWhatsApp(); return false;">Entrar em Contato no WhatsApp</a>
     </div>
-    <a href="#" class="btn-whatsapp" onclick="abrirWhatsApp(); return false;">Entrar em Contato no WhatsApp</a>
 </body>
 </html>
